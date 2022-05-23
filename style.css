@@ -1,0 +1,88 @@
+
+
+.body{
+    background-color: rgb(124, 85, 86);
+}
+
+#heading{
+    margin-left: 40px;
+    color: rgb(45, 6, 6);
+    font-size: 40px;
+    font-family: 'Arial';
+    font-weight:400;
+    letter-spacing: 2px;
+    padding-top: 100px;
+}
+#heading:hover{
+    color:bisque;
+    cursor: pointer;
+}
+
+.imgwrapper{
+    background-image: url(./images/backimg.jpg);
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size:auto;
+    opacity:70%;
+    text-align: center;
+    padding-bottom: 100px;
+    margin: 80px;
+}
+
+.container{
+    background-color: rgb(124, 85, 86);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 1rem;
+    column-gap: 0.5rem;
+    max-width: 95%;
+    margin: 0 auto;  
+}
+
+.wrapper{
+    position: relative;
+}
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+    background-color: rgb(138, 50, 50);
+}
+
+.card{
+   
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    width: 220px;
+    height: 400px;
+    background-color: #b39a9a;
+    font-family: 'Arial';
+    padding: 20px 10px;
+    color: #1e1e1e;
+}
+
+img{
+    width: 190px;
+    height: 249px;
+}
+
+
+
+.title{
+    font-size: 15px;
+    padding: 0;
+    font-family: 'Georgia';
+}
+
+.author{
+    padding: 0;
+    font-size: 15px;
+}
+.price{
+    font-family: 'Georgia';
+    font-weight: 900;
+}
