@@ -1,36 +1,67 @@
 
 
 .body{
-    background-color: rgb(124, 85, 86);
+    background-color: rgb(237, 237, 237);
+}
+
+.logo{
+    max-width: 100%;
+    background-color: rgb(91, 57, 12);
+    font-size: 50px;
+    font-family: 'Georgia';
+    font-style: italic;
+    font-weight: 400;
+    padding: 20px 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.logo:hover{
+    font-size: 60px;
+    color:rgb(190, 144, 87);
+    cursor: pointer;
+    transition-duration: 2s;
+}
+.link{
+    text-decoration: none;
+    color:bisque;
+
 }
 
 #heading{
-    margin-left: 40px;
-    color: rgb(45, 6, 6);
-    font-size: 40px;
-    font-family: 'Arial';
+    color:bisque;
+    font-size: 50px;
+    font-family: 'Georgia';
+    font-style: italic;
     font-weight:400;
     letter-spacing: 2px;
-    padding-top: 100px;
 }
 #heading:hover{
-    color:bisque;
+    color:rgb(159, 91, 7);
     cursor: pointer;
+    transition-duration: 2s;
+    font-size: 60px;
 }
 
+
 .imgwrapper{
-    background-image: url(./images/backimg.jpg);
+    background-image: url(./images/backimg.webp);
     max-width: 100%;
     background-repeat: no-repeat;
-    background-size:auto;
+    background-size:cover;
     opacity:70%;
-    text-align: center;
+    text-align:start;
     padding-bottom: 100px;
-    margin: 80px;
+    padding-top: 100px;
+    margin: 40px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+
 }
 
 .container{
-    background-color: rgb(124, 85, 86);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     row-gap: 1rem;
@@ -41,14 +72,20 @@
 
 .wrapper{
     position: relative;
+
 }
-.hide{
+.hide.info:hover{
     display: none;
+    transition-duration: 10s;
+flex    
 }
+
 
 .show{
     display: block;
-    background-color: rgb(138, 50, 50);
+    background-color:bisque;
+    
+
 }
 
 .card{
@@ -59,7 +96,7 @@
     justify-content: center;
     width: 220px;
     height: 400px;
-    background-color: #b39a9a;
+    background-color: rgb(135, 108, 73);
     font-family: 'Arial';
     padding: 20px 10px;
     color: #1e1e1e;
@@ -85,4 +122,36 @@ img{
 .price{
     font-family: 'Georgia';
     font-weight: 900;
+}
+.button{
+    background-color: aqua;
+    border-radius: 25px;
+}
+.icon{
+    font-size: 50px;
+    text-align: center;
+    margin-left: 20px;
+    color: antiquewhite;
+    padding-top: 30px;
+}
+.icon:hover{
+    cursor: pointer;
+    color: #1e1e1e;
+    transition-duration: 1s;
+}
+
+.bascket{
+    display: flex;
+    width: 200px;
+    height: 90px;
+    align-items: center;
+    justify-content: space-around;
+    align-self: flex-end;
+    border: #1e1e1e solid 2px;
+    background-color: #cac5c5;
+    opacity: 60%;
+}
+.title1{
+    color: black;
+    font-family: "Georgia";
 }
