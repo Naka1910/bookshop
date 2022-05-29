@@ -58,7 +58,12 @@
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
+    padding-left: 30px;
 
+}
+.image{
+    border: 2px rgb(60, 53, 38) solid; 
+    border-radius: 20px;
 }
 
 .container{
@@ -66,7 +71,7 @@
     grid-template-columns: repeat(5, 1fr);
     row-gap: 1rem;
     column-gap: 0.5rem;
-    max-width: 95%;
+    max-width: 97%;
     margin: 0 auto;  
 }
 
@@ -74,18 +79,28 @@
     position: relative;
 
 }
-.hide.info:hover{
+.hide{
     display: none;
     transition-duration: 10s;
-flex    
+  
 }
 
 
 .show{
     display: block;
     background-color:bisque;
-    
+    width: 220px;
+    border-radius: 15px;
+    padding-top: 20px;
+    border: 1px rgb(169, 121, 18) solid;
+    padding-left: 20px;
+    margin-top: 10px;
+    opacity: 60%;
 
+}
+.button:hover{
+    background-color:#e6ddb9 ;
+    cursor: pointer;
 }
 
 .card{
@@ -95,11 +110,13 @@ flex
     align-items:center;
     justify-content: center;
     width: 220px;
-    height: 400px;
+    height: 500px;
     background-color: rgb(135, 108, 73);
     font-family: 'Arial';
     padding: 20px 10px;
-    color: #1e1e1e;
+    color: #e6ddb9;
+    font-family: "Arial";
+    border-radius: 10px;
 }
 
 img{
@@ -124,9 +141,27 @@ img{
     font-weight: 900;
 }
 .button{
-    background-color: aqua;
-    border-radius: 25px;
+    background-color: rgb(211, 176, 126);
+    width: 100px;
+    height: fit-content;
+    border-radius: 15px;
+    border: 1px rgb(169, 121, 18) solid;
+    margin: 20px 0;
 }
+.button-show{
+    background-color: rgb(211, 176, 126);
+    width: 100px;
+    height: fit-content;
+    border-radius: 15px;
+    border: 1px rgb(169, 121, 18) solid;
+}
+.total-price{
+    font-size: 20px;
+    font-family: 'Arial';
+    font-weight: 400;
+}
+
+
 .icon{
     font-size: 50px;
     text-align: center;
@@ -142,16 +177,68 @@ img{
 
 .bascket{
     display: flex;
-    width: 200px;
-    height: 90px;
+    flex-direction: column;
+    width: 400px;
+    height:fit-content;
     align-items: center;
     justify-content: space-around;
     align-self: flex-end;
-    border: #1e1e1e solid 2px;
+    border: #d3b07c solid 2px;
     background-color: #cac5c5;
-    opacity: 60%;
+}
+.product-list{
+    background-color: rgb(191, 153, 77);
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    
+}
+.bascket-wrapp{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
 }
 .title1{
     color: black;
     font-family: "Georgia";
+}
+.all-info{
+    background-color: transparent;
+}
+.info-container{
+    border: solid grey 1px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.button_remove{
+    width: 100px;
+    height: fit-content;
+    border-radius: 10px;
+    margin-left:175px ;
+    font-size: 30px;
+    font-family: 'Arial';
+    background-color: antiquewhite;
+    border: 2px solid rgba(185, 91, 4, 0.781);
+}
+.button_remove:hover{
+    cursor: pointer;
+    background-color: rgb(180, 74, 74);
+}
+.popup-message{
+    width: 400px;
+    height: fit-content;
+    background-color: bisque;
+    color: black;
+    position: fixed;
+    left: 20%;
+    top: 40%;
+    visibility: hidden;
+    z-index: 10;
+    border-radius: 20px;
+}
+.footer{
+    background-color: aqua;
 }

@@ -26,7 +26,26 @@ fetch("./books.json")
     const link2 =document.createElement("a");
     const link3 =document.createElement("a");
     const bascket = document.createElement("div");
+    const productList =document.createElement("div")
+    const totalPrice =document.createElement("div")
+    
+    let cost = 0;
+    const confirmOrder =document.createElement("button");
+    const popUpMessage =document.createElement("div");
+    let closeB = document.createElement("button")
+        closeB.innerHTML = "Close";
+        closeB.onclick = () =>{
+          popUpMessage.innerHTML="";
+          popUpMessage.remove();
+          closeB.remove();
+        }
+    popUpMessage.className = "popup-message"
+    confirmOrder.onclick = () =>{
+      location.href ="./form.html"
+    }
+    confirmOrder.innerHTML ="Confirm Order"
     const basckicn =document.createElement("i")
+    const bascketWrapp =document.createElement("div")
     const title1 =document.createElement("h3")
     header.className ="header"
     
@@ -42,6 +61,11 @@ fetch("./books.json")
     link3.target ="_blank"
     link.href ="#cont";
     basckicn.className ="fas fa-cart-plus"
+    totalPrice.className ="total-price"
+    totalPrice.innerHTML =`Total: ${cost}`
+    bascketWrapp.className ="bascket-wrapp"
+    productList.className ="product-list"
+    confirmOrder.className = "confirm-order"
     logo.className = "logo";
     github.className ="fab fa-github icon";
     facebook.className ="fab fa-facebook icon";
@@ -76,13 +100,21 @@ fetch("./books.json")
     link3.append(linkedin)
     header.append(heading);
     imgwrapper.append(bascket)
-    bascket.append(title1)
-    bascket.append(basckicn)
+    bascketWrapp.append(title1)
+    bascketWrapp.append(totalPrice)
+    bascketWrapp.append(basckicn)
+    bascket.append(bascketWrapp)
+  
+    bascket.append(productList)
+    
     imgwrapper.append(heading);
     imgwrapper.className ='imgwrapper';
     header.append(imgwrapper)
     fragment.append(header);
     document.body.className ="body"
+    const footer =document.createElement("footer");
+    footer.className="footer";
+    footer.append(icons);
     for (var i = 0; i < data.length; i++) {
       const wrapper = document.createElement("div");
       const info = document.createElement("div");
@@ -92,6 +124,10 @@ fetch("./books.json")
       const title = document.createElement("h4");
       const author = document.createElement("h5");
       const price = document.createElement("span");
+      const description = document.createElement("p")
+      description.innerHTML = "Book description: " + data[i].description
+      description.className ="description";
+      image.className ="image"
   
       wrapper.className = "wrapper";
       info.className = "info";
@@ -122,17 +158,67 @@ fetch("./books.json")
       const popUpAuthor =document.createElement("h5")
       popUpAuthor.innerHTML = data[i].author;
       const button = document.createElement('button')
-      const button1 = document.createElement('button')
+      const buttonShow = document.createElement('button')
       button.className= "button"
-      button.className= "button1"
+      buttonShow.className= "button-show"
       popUp.className = "hide";
-      popUp.append(popUpPrice)
+      popUp.append(popUpPrice);
       popUp.append(popUpTitle)
       popUp.append(popUpAuthor)
-      popUp.append(button)
-      popUp.append(button1)
+      // add to bascket functionality.
+      button.addEventListener("click", addItem)
+      function addItem(){
+        // alert(price.innerText)
+        const allInfo = document.createElement("div")
+        const infoContainer = document.createElement("div")
+        const buttonRemove = document.createElement("button")
+        buttonRemove.innerHTML ="X"
+        allInfo.className = "all-info"
+        infoContainer.className ="info-container"
+        buttonRemove.className ="button_remove"
+        if(productList.innerText.includes(price.innerText)){
+
+        }else{
+        allInfo.append(title)
+        allInfo.append(author);
+        allInfo.append(price);
+        infoContainer.append(allInfo);
+        infoContainer.append(buttonRemove);
+        productList.append(infoContainer);
+        let priceHolder = price.innerText.replace("price: ", "");
+        cost+=parseInt(priceHolder);
+        totalPrice.innerText = `Total: ${cost}`
+        if(cost > 0){
+          productList.append(confirmOrder)
+        }
+        buttonRemove.onclick = () => {
+          cost-=parseInt(priceHolder)
+          totalPrice.innerText = `Total: ${cost}`
+          infoContainer.remove();
+          confirmOrder.remove();
+        }
+      }
+
+
+
+      }
+
+      card.append(button)
+      card.append(buttonShow)
       button.innerHTML = 'Add to cart'
-      button1.innerHTML = 'Show more'
+      buttonShow.innerHTML = 'Show more'
+      buttonShow.onclick = () =>{
+        if(popUpMessage.innerText.length === 0 ){
+          popUpMessage.append(description);
+          popUpMessage.append(closeB);
+          wrapper.append(popUpMessage);
+          popUpMessage.style.visibility ="visible";
+
+        } 
+
+      
+    }
+
 
       wrapper.appendChild(card);
       wrapper.append(popUp);
