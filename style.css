@@ -183,8 +183,9 @@ img{
     align-items: center;
     justify-content: space-around;
     align-self: flex-end;
-    border: #d3b07c solid 2px;
+    border: #d3b07c solid 1px;
     background-color: #cac5c5;
+    border-radius: 5px;
 }
 .product-list{
     background-color: rgb(191, 153, 77);
@@ -238,7 +239,66 @@ img{
     visibility: hidden;
     z-index: 10;
     border-radius: 20px;
+    border: 1px solid rgb(106, 91, 7);
 }
-.footer{
-    background-color: aqua;
+.closeb{
+    margin-left: 150px;
+    width: 100px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border:1px solid rgb(106, 91, 7);
+    background-color: #e4c393;
+    font-family: "Arial";
+    
+}
+.closeb:hover{
+    background-color: #e1b585;
+    cursor: pointer;
+}
+.confirm-order{
+    background-color: antiquewhite;
+    border: 1px solid grey;
+    padding: 10px;
+
+}
+.confirm-order:hover{
+  background-color: #d3b07c;
+  cursor: pointer;
+}
+/* form styles start */
+.form-wrapper{
+    max-width: 300px;
+    align-items: center;
+    background-color: rgb(206, 189, 158);
+    margin-left: 500px;
+    max-height:fit-content;
+    padding-left: 80px;
+}
+.form_box{
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-family: 'Arial';
+}
+.crcard{
+   margin:10px
+}
+.cash{
+    margin:10px
+    
+}
+.cmpl{
+    background-color: #d3b07c;
+    margin: 20px 0 20px 60px;
+    border: 1px solid;
+    font-family: "Arial";
+    border-radius: 5px;
+    
+}
+.cmpl:hover{
+    cursor: pointer;
+    background-color:#bdad9c;
+}
+.form-title{
+    font-size: 25px;
+    padding-top: 30px;
 }

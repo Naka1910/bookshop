@@ -5,8 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/9879aac9a6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <p>Test me </p>
+    <form action="">
+    <div class="form-wrapper">
+        <h3 class="form-title">Fill the following fields</h3>
+        <div class="form_box">
+            <label for="username">Name: </label><br>
+            <input type="text" name="username" placeholder="username" id="user" pattern="[A-Za-z]{4}" required>
+        </div>
+
+        <div class="form_box">
+            <label for="surname">Surname: </label><br>
+            <input type="text" name="surname" placeholder="surname" id="surname" pattern="[A-Za-z]{5}" required>
+        </div>
+
+        <div class="form_box">
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        </div>
+
+        <div class="form_box">
+            <label for="street">Street: </label><br>
+            <input type="text" name="street" placeholder="Street" id="street" required>
+        </div>
+
+        <div class="form_box">
+            <label for="house">House: </label><br>
+            <input type="text" name="house" placeholder="House" id="house" required>
+        </div>
+
+        <div class="form_box">
+            <label for="flat">Flat: </label><br>
+            <input type="flat" name="flat" placeholder="Flat" id="flat" required>
+        </div>
+
+        <div class="form-box2">
+            Payment:<br>
+
+    <label>
+        Cash <i class="	fas fa-money-bill-wave cash"></i>
+        <input type="radio" name="payment" value="cash" required>
+        
+    </label><br>
+
+    <label>
+        Card  <i class="far fa-credit-card crcard"></i>
+        <input type="radio" name="payment" value="card">
+        
+    </label>
+        </div>
+
+        
+
+        Gift:<br>
+
+        <label>
+            Pack as a gift
+          <input type="radio" name="gender" value="male" required>
+         
+        </label><br>
+      
+        <label>
+            Add postcard
+          <input type="radio" name="gender2" value="female">
+          
+        </label><br>
+      
+        <label>
+            Provide 5% discount to the next time
+          <input type="radio" name="gender" value="other" required>
+          
+        </label><br>
+
+        <label>
+            Branded pen or pencil
+        <input type="radio" name="gender2" value="male2" required>
+            
+        </label><br>
+      
+        <div>
+            <input class="cmpl" type="submit" name="login-btn" value ="Complete Form" id="btn-complete">
+        </div>
+    </div>
+</form>
+
+   
+    
+    
+</div>
 </body>
 </html>

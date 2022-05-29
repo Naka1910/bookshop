@@ -29,10 +29,13 @@ fetch("./books.json")
     const productList =document.createElement("div")
     const totalPrice =document.createElement("div")
     
+
+    
     let cost = 0;
     const confirmOrder =document.createElement("button");
     const popUpMessage =document.createElement("div");
     let closeB = document.createElement("button")
+    closeB.className ="closeb"
         closeB.innerHTML = "Close";
         closeB.onclick = () =>{
           popUpMessage.innerHTML="";
@@ -104,17 +107,14 @@ fetch("./books.json")
     bascketWrapp.append(totalPrice)
     bascketWrapp.append(basckicn)
     bascket.append(bascketWrapp)
-  
     bascket.append(productList)
-    
     imgwrapper.append(heading);
     imgwrapper.className ='imgwrapper';
     header.append(imgwrapper)
     fragment.append(header);
+   
     document.body.className ="body"
-    const footer =document.createElement("footer");
-    footer.className="footer";
-    footer.append(icons);
+   
     for (var i = 0; i < data.length; i++) {
       const wrapper = document.createElement("div");
       const info = document.createElement("div");
@@ -230,7 +230,6 @@ fetch("./books.json")
       document.body.append(fragment);
 
   }
-  
 
 }
 function showPopup(ev){
