@@ -10,38 +10,49 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <form action="">
+    <form  autocomplete="off" action="">
     <div class="form-wrapper">
         <h3 class="form-title">Fill the following fields</h3>
         <div class="form_box">
             <label for="username">Name: </label><br>
-            <input type="text" name="username" placeholder="username" id="user" pattern="[A-Za-z]{4}" required>
+            <input type="text" name="username" placeholder="Username" id="usernm" pattern="[A-Za-z]{4}" 
+             onkeyup="isEmpty()" autocomplete="false" required>
+            <p style="display:none ;" id="usernmInvalid"> Invalid Input! </p>
+
         </div>
 
         <div class="form_box">
             <label for="surname">Surname: </label><br>
-            <input type="text" name="surname" placeholder="surname" id="surname" pattern="[A-Za-z]{5}" required>
+            <input type="text" name="surname" placeholder="surname" id="surnm" pattern="[A-Za-z]{5}"  onkeyup="isEmpty()" required>
+            <p style="display:none ;" id="surnmInvalid"> Invalid Input! </p>
+
         </div>
 
         <div class="form_box">
         <label for="date">Date:</label>
-        <input type="date" id="date" required>
+        <input type="date" id="date"  required>
+        <p  style="display:none ;" id="dateInvalid"> Invalid Input!</p>
+
 
         </div>
 
         <div class="form_box">
             <label for="street">Street: </label><br>
-            <input type="text" name="street" placeholder="Street" id="street" required>
+            <input type="text" name="street" placeholder="Street" id="street" onkeyup="isEmpty()" required>
+            <p style="display:none ;" id="streetInvalid">Invalid Input! </p>
+
         </div>
 
         <div class="form_box">
             <label for="house">House: </label><br>
-            <input type="text" name="house" placeholder="House" id="house" required>
+            <input type="text" name="house" placeholder="House" id="house"  onkeyup="isEmpty()"required>
+            <p style="display:none ;" id="houseInvalid">Invalid Input! </p>
+
         </div>
 
         <div class="form_box">
             <label for="flat">Flat: </label><br>
-            <input type="flat" name="flat" placeholder="Flat" id="flat" required>
+            <input type="flat" name="flat" placeholder="Flat" id="flat" onkeyup="isEmpty()" required>
         </div>
 
         <div class="form-box2">
@@ -77,7 +88,7 @@
         </label><br>
       
         <label>
-            Provide 5% discount to the next time
+            Provide 2% discount to the next time
           <input type="radio" name="gender" value="other" required>
           
         </label><br>
@@ -93,6 +104,125 @@
         </div>
     </div>
 </form>
+
+
+
+<!--little javascrip -->
+<script>
+let usernmCheck =false;
+let surnmCheck =false;
+let dateCheck=false;
+let streetCheck = false;
+let usernm =document.querySelector('#usernm')
+let usernmCont =document.getElementById("usernmInvalid")
+usernm.addEventListener('keyup', function(){
+            
+            if(usernm.value.length == 0 || usernm.value.length < 4 ){
+                usernm.style.border= '2px solid red';
+                usernmCont.style.display = "block";
+                usernmCheck = false;
+            }else {
+                usernmCont.style.display = "none";
+                usernm.style.border = '1px solid black';
+                usernmCheck = true;
+            }
+        
+            function sumLetter(textinput){
+        let letters = /^[A-Za-z]{4,}$/;
+        if(textinput.value.match(letters)){
+            usernm.style.border = 'none';
+            usernmCheck = true;
+            
+        }else{
+                usernm.style.border= '2px solid red';
+                usernmCheck = false;
+            }
+        }
+
+        sumLetter(usernm);
+        });
+   
+        let surnm =document.querySelector('#surnm')
+        let surnmCont =document.getElementById("surnmInvalid")
+        surnm.addEventListener('keyup', function(){
+         if(surnm.value.length === 0 || surnm.value.length <5 ){
+             surnm.style.border =' 2px solid red';
+             surnmCont.style.display ="block";
+             surnmCheck =false;
+         }else{
+             surnmCont.style.display ='none';
+             surnm.style.border = ' 1px solid black';
+             surnmCheck =true;
+         }
+         function sumLetter(textinput){
+            let letters = /^[A-Za-z]{5,}$/;
+            if(textinput.value.match(latters)){
+                surnmCont.style.display ='none'
+                surnm.style.border ="1px solid black";
+                surnmCheck=true;
+            }else{
+                surnm.style.border ="2px solid red"
+                surnmCont.style.display = "block";
+                surnmCheck=false;
+            }
+         }
+        sumLetter(surnm);
+
+        })
+        let selectDate = document.getElementById("date");
+        let dateCont = document.getElementById("dateInvalid");
+         selectDate.addEventListener('input', () => {
+        let now = new Date();
+        let dateValue = document.getElementById("date").value;
+        let newDate = new Date(dateValue);
+        if(newDate <= now){
+                dateCont.style.display="block";
+                selectDate.style.border= '2px solid red';
+                dateCheck = false;
+        }else{
+            dateCont.style.display="none";
+                selectDate.style.border = '1px solid black';
+                dateCheck = true;
+        }
+    }
+    )
+    let streetCont = document.getElementById("streetInvalid");
+    var street = document.querySelector('#street');
+        street.addEventListener('keyup', function(){
+            if(street.value.length < 5){
+                
+                street.style.border= '2px solid red';
+                streetCheck = false;
+                streetCont.style.display= "block";
+            }else {
+                streetCont.style.display = "none";
+                street.style.border = 'none';
+                streetCheck = true;
+            }
+        });
+        let houseCont= document.getElementById("houseInvalid");
+        var house = document.querySelector('#house');
+        house.addEventListener('keyup', function(){
+            function sumNum(input){
+            var num = /^[0-9]+$/;
+            if(input.value.match(num)){
+                house.style.border = '2px solid black';
+                houseCont.style.display="none";
+                houseCheck = true;
+                
+            }else{
+                house.style.border= '2px solid red';
+                houseCont.style.display = "block";
+                houseCheck = false;
+                }
+            }
+            sumNum(house);
+        });
+
+
+
+
+</script>
 
    
     
